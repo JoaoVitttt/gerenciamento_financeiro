@@ -1,0 +1,20 @@
+CREATE TABLE categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50)
+);
+
+CREATE TABLE receitas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(255),
+    valor DECIMAL(10, 2),
+    data DATE
+);
+
+CREATE TABLE despesas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(255),
+    valor DECIMAL(10, 2),
+    data DATE,
+    categoria_id INT,
+    FOREIGN KEY (categoria_id) REFERENCES categorias(id)
+);
